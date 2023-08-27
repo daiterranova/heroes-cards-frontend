@@ -6,7 +6,10 @@
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .header-nav {
@@ -20,10 +23,11 @@ body {
   box-shadow: 0px 10px 7px 0px rgba(0, 0, 0, 0.25);
   font-weight: 400;
   font-size: 40px;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   top: 4%;
   z-index: 2;
+  color: white;
 }
 .header-nav,
 .header-title {
@@ -31,48 +35,51 @@ body {
 }
 
 main {
-  width: 91%;
-  padding: 9rem 8rem;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  /* gap: 3rem; */
+  padding: 4rem 4rem;
+  /* margin: auto; */
+}
+.cards-container {
+  display: flex;
+  justify-content: space-around;
 }
 .card {
-  display: inline-block;
-
-  margin-right: 2.5rem;
-  width: 300px;
-  height: 529px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-right: 2.5rem; */
+  width: 45%;
+  /* height: 529px; */
   text-align: center;
   background-color: #f3f3f3;
   border-radius: 16px 16px 0px 0px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   position: relative;
+  padding-bottom: 1rem;
 }
-.batman {
-  background-image: url(/assets/bground-batman.png);
-  background-repeat: no-repeat;
-}
-.card-tit {
-  display: block;
-  position: absolute;
-  top: 40%;
-  left: 34%;
-  background-color: white;
-}
-.card-txt {
-  padding: 2rem;
+
+.background-photo-container img {
+  width: 100%;
+  border-radius: 5%;
 }
 .profile-image-container {
+  width: 40%;
   position: absolute;
   z-index: 1;
-  top: 25%;
-  left: 30%;
+  top: 15%;
+  left: 35%;
   border-radius: 50%;
 }
 .profile-image-container img {
   border-radius: 50%;
+  width: 100%;
 }
 
-i {
+.fa-heart {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -82,7 +89,7 @@ i {
 }
 .card-title {
   padding: 0.8rem;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   font-weight: 400;
   font-size: 1.8rem;
 }
@@ -100,9 +107,94 @@ i {
   width: 8.2rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+.description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80%;
+}
 footer {
+  display: flex;
+
+  width: 100%;
+  /* justify-content: space-between; */
+  align-items: center;
   background-color: #00669f;
   padding: 1rem;
-  text-align: start;
+  text-align: center;
   color: #fff9f9;
+}
+.footer-text {
+  text-align: center;
+  flex: 1;
+}
+footer img {
+  align-self: flex-end;
+}
+.img-github {
+  width: 10%;
+}
+.plus {
+  align-self: end;
+  order: 1;
+  font-size: 3rem;
+  z-index: 1;
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  margin-right: 1rem;
+}
+
+@media (max-width: 680px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+  .harley {
+    display: none;
+  }
+  .card {
+    width: 65%;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  footer img {
+    width: 15%;
+    align-self: center;
+  }
+  .profile-image-container {
+    top: 20%;
+    left: 33%;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .card {
+    width: 40%;
+  }
+  .profile-image-container {
+    top: 18%;
+    left: 30%;
+  }
+  .plus {
+    top: 90%;
+  }
 }
