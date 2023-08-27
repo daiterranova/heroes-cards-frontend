@@ -138,11 +138,10 @@ footer img {
 }
 .plus {
   align-self: end;
-  order: 1;
   font-size: 3rem;
   z-index: 1;
   position: absolute;
-  bottom: 10%;
+  bottom: 8%;
   right: 0;
   margin-right: 1rem;
 }
@@ -164,7 +163,11 @@ footer img {
     display: none;
   }
   .card {
-    width: 65%;
+    width: 100%;
+    gap: 2rem;
+  }
+  .card h2 {
+    font-size: 1.5rem;
   }
 
   footer {
@@ -172,17 +175,20 @@ footer img {
     flex-direction: column;
     gap: 0.5rem;
   }
-  footer img {
-    width: 15%;
+  .img-github {
+    width: 20%;
     align-self: center;
   }
   .profile-image-container {
     top: 20%;
     left: 33%;
   }
+  .plus {
+    bottom: 19%;
+  }
 }
 
-@media (min-width: 700px) and (max-width: 1000px) {
+@media (min-width: 700px) and (max-width: 1200px) {
   main {
     display: flex;
     flex-direction: column;
@@ -196,6 +202,6 @@ footer img {
     left: 30%;
   }
   .plus {
-    top: 90%;
+    top: 80%;
   }
 }
